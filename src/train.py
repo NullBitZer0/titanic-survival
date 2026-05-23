@@ -1,3 +1,4 @@
+import dagshub
 import mlflow
 import mlflow.sklearn
 import pandas as pd
@@ -31,6 +32,13 @@ X_train, X_test, y_train, y_test = train_test_split(
 # Parameters
 n_estimators = 200
 max_depth = 10
+
+dagshub.init(
+    repo_owner="NullBitZer0",
+    repo_name="titanic-survival",
+    mlflow=True
+)
+
 
 # Start MLflow run
 with mlflow.start_run():
