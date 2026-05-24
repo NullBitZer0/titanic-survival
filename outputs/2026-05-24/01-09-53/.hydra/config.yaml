@@ -1,0 +1,6 @@
+model:
+  n_estimators: 244
+  max_depth: 9
+data:
+  test_size: 0.2
+  random_state: 42

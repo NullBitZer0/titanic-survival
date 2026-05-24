@@ -1,0 +1,46 @@
+schema: '2.0'
+stages:
+  train:
+    cmd: python src/train.py
+    deps:
+    - path: configs/config.yaml
+      hash: md5
+      md5: cd168be60f7a675ecca3eddfe1f5c81a
+      size: 52
+    - path: configs/data/titanic.yaml
+      hash: md5
+      md5: 7e03b5949d545daa45778af8481ec2dc
+      size: 31
+    - path: configs/model/random_forest.yaml
+      hash: md5
+      md5: d04757267e1050cf224ff94e9760694b
+      size: 31
+    - path: processed/processed.csv
+      hash: md5
+      md5: 88b5d36f6e6d92527a1939091b82a35b
+      size: 15224
+    - path: src/train.py
+      hash: md5
+      md5: b26c6ba7536864d51fc257a1062b84a5
+      size: 2109
+    outs:
+    - path: metrics.json
+      hash: md5
+      md5: 9ee3b706f02e251284a81a7aa4a27209
+      size: 38
+  preprocess:
+    cmd: python src/preprocess.py
+    deps:
+    - path: data/titanic.csv
+      hash: md5
+      md5: 61fdd54abdbf6a85b778e937122e1194
+      size: 60302
+    - path: src/preprocess.py
+      hash: md5
+      md5: fea33d118ae47cce04e0f8e64ecc152b
+      size: 405
+    outs:
+    - path: processed/processed.csv
+      hash: md5
+      md5: 88b5d36f6e6d92527a1939091b82a35b
+      size: 15224

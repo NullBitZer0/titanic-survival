@@ -3,3 +3,6 @@ pandas
 mlflow
 dagshub
 dvc
+pyyaml
+optuna
+hydra-core

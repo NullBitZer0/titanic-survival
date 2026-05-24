@@ -1,0 +1,19 @@
+stages:
+  preprocess:
+    cmd: python src/preprocess.py
+    deps:
+    - data/titanic.csv
+    - src/preprocess.py
+    outs:
+    - processed/processed.csv
+
+  train:
+    cmd: python src/train.py
+    deps:
+    - configs/config.yaml
+    - configs/data/titanic.yaml
+    - configs/model/random_forest.yaml
+    - processed/processed.csv
+    - src/train.py
+    metrics:
+    - metrics.json

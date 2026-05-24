@@ -1,0 +1,3 @@
+defaults:
+  - model: random_forest
+  - data: titanic
